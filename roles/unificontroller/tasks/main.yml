@@ -1,0 +1,5 @@
+- name: install docker
+  pacman:
+    name: docker
+    state: present
+  notify: restart docker
