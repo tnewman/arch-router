@@ -2,9 +2,7 @@
   pacman:
     name: "{{ packages }}"
     state: present
-  notify:
-    - restart docker
-    - restart unifi controller
+  notify: restart docker
   vars:
     packages:
     - docker
