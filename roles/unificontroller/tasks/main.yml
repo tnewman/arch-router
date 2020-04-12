@@ -8,6 +8,24 @@
     - docker
     - docker-compose
 
+- name: install docker prune service
+  copy:
+    src: docker-prune.service
+    dest: /etc/systemd/system/docker-prune.service
+  notify: restart docker prune timer
+
+- name: install docker prune timer
+  copy:
+    src: docker-prune.timer
+    dest: /etc/systemd/system/docker-prune.timer
+  notify: restart docker prune timer
+
+- name: enable docker prune timer
+  service:
+    name: docker-prune.timer
+    enabled: yes
+  notify: restart docker prune timer
+
 - name: create unifi controller directory
   file:
     path: /opt/unifi-controller

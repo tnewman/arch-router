@@ -1,0 +1,9 @@
+[Unit]
+Description=Prune unused Docker images
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/docker system prune --all --force
+
+[Install]
+WantedBy=default.target
