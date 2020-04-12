@@ -53,6 +53,12 @@
     dest: /etc/nftables.conf
   notify: restart nftables
 
+- name: create nftables directory
+  file:
+    path: /etc/nftables.d
+    state: directory
+  notify: restart nftables
+
 - name: install dnsmasq
   pacman:
     name: dnsmasq
