@@ -1,3 +1,28 @@
+- name: mask systemd interface naming
+  file:
+    src: /dev/null
+    dest: /etc/systemd/network/99-default.link
+    state: link
+  notify: restart systemd-networkd
+
+- name: enable systemd-networkd
+  service:
+    name: systemd-networkd
+    enabled: yes
+  notify: restart systemd-networkd
+
+- name: create lan interface
+  file:
+    src: br0.netdev
+    dest: /etc/systemd/network/br0.netdev
+  notify: restart systemd-networkd
+
+- name: create lan network
+  file:
+    src: br0.network
+    dest: /etc/systemd/network/br0.network
+  notify: restart systemd-networkd
+
 - name: install nftables
   pacman:
     name: nftables
@@ -15,16 +40,3 @@
     src: nftables.conf.j2
     dest: /etc/nftables.conf
   notify: restart nftables
-
-- name: mask systemd interface naming
-  file:
-    src: /dev/null
-    dest: /etc/systemd/network/99-default.link
-    state: link
-  notify: restart systemd-networkd
-
-- name: enable systemd-networkd
-  service:
-    name: systemd-networkd
-    enabled: yes
-  notify: restart systemd-networkd
