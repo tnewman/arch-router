@@ -52,3 +52,9 @@
     src: nftables.conf
     dest: /etc/nftables.conf
   notify: restart nftables
+
+- name: install dnsmasq
+  pacman:
+    name: dnsmasq
+    state: present
+  notify: restart dnsmasq
