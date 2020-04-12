@@ -12,13 +12,13 @@
   notify: restart systemd-networkd
 
 - name: create lan interface
-  file:
+  copy:
     src: br0.netdev
     dest: /etc/systemd/network/br0.netdev
   notify: restart systemd-networkd
 
 - name: create lan network
-  file:
+  copy:
     src: br0.network
     dest: /etc/systemd/network/br0.network
   notify: restart systemd-networkd
@@ -36,7 +36,7 @@
   notify: restart nftables
 
 - name: install nftables configuration file
-  file:
+  copy:
     src: nftables.conf
     dest: /etc/nftables.conf
   notify: restart nftables
