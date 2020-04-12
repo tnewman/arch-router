@@ -1,5 +1,6 @@
 [Match]
-Name=wan
+Name=eth0
 
 [Network]
+Bridge=wan
 DHCP=ipv4
