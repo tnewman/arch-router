@@ -13,7 +13,7 @@
 
 - name: create wan interface
   copy:
-    src: wan.link
+    src: 50-wan.link
     dest: /etc/systemd/network/50-wan.link
   notify: restart systemd-networkd
 
