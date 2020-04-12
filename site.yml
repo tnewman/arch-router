@@ -1,0 +1,11 @@
+- name: configure router
+  hosts: router
+  become: yes
+  roles:
+    - router
+
+- name: configure unifi controller
+  hosts: unificontroller
+  become: yes
+  roles:
+    - unificontroller

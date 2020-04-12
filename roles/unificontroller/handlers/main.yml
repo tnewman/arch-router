@@ -1,0 +1,14 @@
+- name: restart docker
+  service:
+    name: docker
+    state: restarted
+
+- name: restart docker prune timer
+  service:
+    name: docker-prune.timer
+    state: restarted
+
+- name: restart unifi controller
+  service:
+    name: unifi-controller
+    state: restarted
