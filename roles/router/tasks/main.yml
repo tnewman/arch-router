@@ -1,3 +1,9 @@
+- name: mask systemd interface naming
+  file:
+    src: /dev/null
+    dest: /etc/systemd/network/99-default.link
+    state: link
+
 - name: install nftables
   pacman:
     name: nftables

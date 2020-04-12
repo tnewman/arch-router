@@ -1,0 +1,6 @@
+[NetDev]
+Name=lan
+Kind=bridge
+
+[Link]
+RequiredForOnline=yes

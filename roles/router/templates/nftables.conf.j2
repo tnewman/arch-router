@@ -1,38 +1,63 @@
 #!/usr/bin/nft -f
-# ipv4/ipv6 Simple & Safe Firewall
-# you can find examples in /usr/share/nftables/
+
+#!/usr/bin/nft -f
+
+define internal_nic = br0
+define external_nic = enp3s0
+define docker_nic = docker0
 
 table inet filter {
   chain input {
     type filter hook input priority 0;
 
     # allow established/related connections
-    ct state {established, related} accept
+    ct state { established, related } accept
 
     # early drop of invalid connections
     ct state invalid drop
 
-    # allow from loopback
-    iifname lo accept
+    # allow from loopback and internal nic
+    iifname { lo, $internal_nic } accept
 
     # allow icmp
-    # ip protocol icmp accept
-    # meta l4proto ipv6-icmp accept
-
-    # allow ssh
-    # tcp dport ssh accept
+    ip protocol icmp accept
+    ip6 nexthdr icmpv6 accept
 
     # everything else
-    reject with icmpx type port-unreachable
+    reject with icmp type port-unreachable
   }
+
   chain forward {
     type filter hook forward priority 0;
+
+    # allow from loopback and internal nic
+    iifname { lo, $internal_nic, $docker_nic } accept
+
+    # allow established/related connections
+    oifname $internal_nic ct state { established, related } accept
+    oifname $docker_nic ct state { established, related } accept
+
+    # Drop everything else
     drop
   }
+
   chain output {
     type filter hook output priority 0;
   }
-
 }
+
+table ip nat {
+  chain prerouting {
+    type nat hook prerouting priority 0
+  }
+
+  chain postrouting {
+    type nat hook postrouting priority 0
+
+    oifname $external_nic masquerade
+    oifname $docker_nic masquerade
+  }
+}
+
 
 include "/etc/nftables/*.nft"
