@@ -4,6 +4,6 @@
     - router
 
 - name: configure unifi controller
-  hosts: unifi-controller
+  hosts: unificontroller
   roles:
-    - unifi-controller
+    - unificontroller
