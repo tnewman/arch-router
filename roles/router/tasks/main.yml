@@ -65,6 +65,17 @@
     enabled: yes
   notify: restart dnsmasq
 
+- name: install dnsmasq configuration file
+  copy:
+    src: dnsmasq.conf
+    dest: /etc/dnsmasq.conf
+  notify: restart dnsmasq
+
+- name: create dnsmasq directory
+  file:
+    path: /etc/dnsmasq.d
+    state: directory
+  notify: restart dnsmasq
 
 - name: install resolv configuration file
   copy:
