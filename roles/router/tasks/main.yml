@@ -58,3 +58,9 @@
     name: dnsmasq
     state: present
   notify: restart dnsmasq
+
+- name: disable systemd-resolved
+  service:
+    name: systemd-resolved
+    enable: no
+    state: stopped
