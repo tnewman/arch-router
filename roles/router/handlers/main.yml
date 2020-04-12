@@ -1,9 +1,14 @@
+- name: restart systemd-networkd
+  service:
+    name: systemd-networkd
+    state: restarted
+
 - name: restart nftables
   service:
     name: nftables
     state: restarted
 
-- name: restart systemd-networkd
+- name: restart dnsmasq
   service:
-    name: systemd-networkd
+    name: dnsmasq
     state: restarted
