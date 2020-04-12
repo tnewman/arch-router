@@ -1,0 +1,9 @@
+- name: configure router
+  hosts: router
+  roles:
+    - router
+
+- name: configure unifi controller
+  hosts: unifi-controller
+  roles:
+    - unifi-controller
