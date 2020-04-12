@@ -4,6 +4,12 @@
     state: present
   notify: restart docker
 
+- name: install unifi controller service
+  copy:
+    src: unifi-controller.service
+    dest: /etc/systemd/system/unifi-controller.service
+  notify: restart unifi controller
+
 - name: enable unifi controller service
   service:
     name: unifi-controller
@@ -14,10 +20,4 @@
   copy:
     src: unifi-docker-compose.yaml
     dest: /opt/unifi-controller/docker-compose.yaml
-  notify: restart unifi controller
-
-- name: install unifi controller service
-  copy:
-    src: unifi-controller.service
-    dest: /etc/systemd/system/unifi-controller.service
   notify: restart unifi controller
