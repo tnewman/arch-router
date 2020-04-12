@@ -1,0 +1,16 @@
+[Unit]
+Description=Unifi Controller
+Requires=docker.service
+After=docker.service
+After=dnsmasq.service
+
+[Service]
+Restart=always
+
+WorkingDirectory=/opt/unifi-controller
+
+ExecStart=/usr/bin/docker-compose up
+ExecStop=/usr/bin/docker-compose down
+
+[Install]
+WantedBy=multi-user.target
