@@ -11,16 +11,22 @@
     enabled: yes
   notify: restart systemd-networkd
 
+- name: create wan network
+  copy:
+    src: wan.network
+    dest: /etc/systemd/network/wan.network
+  notify: restart systemd-networkd
+
 - name: create lan interface
   copy:
-    src: br0.netdev
-    dest: /etc/systemd/network/br0.netdev
+    src: lan.netdev
+    dest: /etc/systemd/network/lan.netdev
   notify: restart systemd-networkd
 
 - name: create lan network
   copy:
-    src: br0.network
-    dest: /etc/systemd/network/br0.network
+    src: lan.network
+    dest: /etc/systemd/network/lan.network
   notify: restart systemd-networkd
 
 - name: install nftables
