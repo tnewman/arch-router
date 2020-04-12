@@ -3,6 +3,6 @@ Name=*
 
 [Network]
 Address=10.0.0.1/24
-Bridge=br0
+Bridge=lan
 IPForward=yes
 ConfigureWithoutCarrier=yes
