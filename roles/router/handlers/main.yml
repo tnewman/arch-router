@@ -2,3 +2,8 @@
   service:
     name: nftables
     state: restarted
+
+- name: restart systemd-networkd
+  service:
+    name: systemd-networkd
+    state: restarted
