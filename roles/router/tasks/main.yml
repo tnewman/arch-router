@@ -11,6 +11,12 @@
     enabled: yes
   notify: restart systemd-networkd
 
+- name: create wan interface
+  copy:
+    src: wan.link
+    dest: /etc/systemd/network/wan.link
+  notify: restart systemd-networkd
+
 - name: create wan network
   copy:
     src: wan.network
