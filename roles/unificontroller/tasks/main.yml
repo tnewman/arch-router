@@ -4,6 +4,11 @@
     state: present
   notify: restart docker
 
+- name: create unifi controller directory
+  file:
+    path: /opt/unifi-controller
+    state: directory
+
 - name: install unifi controller service
   copy:
     src: unifi-controller.service
