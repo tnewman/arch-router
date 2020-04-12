@@ -1,8 +1,12 @@
 - name: install docker
   pacman:
-    name: docker
+    name: "{{ packages }}"
     state: present
   notify: restart docker
+  vars:
+    packages:
+    - docker
+    - docker-compose
 
 - name: create unifi controller directory
   file:
