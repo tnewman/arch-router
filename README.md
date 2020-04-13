@@ -9,14 +9,17 @@ A set of Ansible Scripts to turn a barebones Arch Linux installation into a home
 - Bridges all `eth*` interfaces (except `eth0`)
 - Configures nftables
 - Configures dnsmasq for DHCP and DNS (using `1.1.1.1`)
+- Configures sshd (not remotely accessible)
 - Configures Unifi Controller (optional role)
 
 ## Customizations
-- Choose the desired roles (router and Unifi Controller) by editing `site.yml`
+- Choose the desired roles (router and Unifi Controller) by editing `hosts`
 - Customize nftables by adding configuration files to `/etc/nftables.d`
 - Customize dnsmasq by adding configuration files to `/etc/dnsmasq.d`
 
 ## Running on localhost
-```bash
-ansible-playbook --connection=local -i hosts site.yml
-```
+1. Run the Ansible Playbook
+   ```bash
+   ansible-playbook -i hosts site.yml
+   ```
+2. Reboot

@@ -1,14 +1,4 @@
-- name: restart systemd-networkd
-  service:
-    name: systemd-networkd
-    state: restarted
-
-- name: restart nftables
-  service:
-    name: nftables
-    state: restarted
-
-- name: restart dnsmasq
-  service:
-    name: dnsmasq
-    state: restarted
+- include: handlers/systemd-networkd.yml
+- include: handlers/nftables.yml
+- include: handlers/dnsmasq.yml
+- include: handlers/ssh.yml

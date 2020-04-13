@@ -1,0 +1,11 @@
+- name: install openssh
+  pacman:
+    name: openssh
+    state: present
+  notify: restart openssh
+
+- name: enable openssh service
+  service:
+    name: sshd
+    enabled: yes
+  notify: restart openssh
