@@ -1,5 +1,5 @@
 [router]
-localhost
+localhost ansible_connection=local
 
 [unificontroller]
-localhost
+localhost ansible_connection=local
