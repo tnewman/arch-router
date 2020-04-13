@@ -17,6 +17,8 @@ A set of Ansible Scripts to turn a barebones Arch Linux installation into a home
 - Customize dnsmasq by adding configuration files to `/etc/dnsmasq.d`
 
 ## Running on localhost
-```bash
-ansible-playbook -i hosts site.yml
-```
+1. Run the Ansible Playbook
+   ```bash
+   ansible-playbook -i hosts site.yml
+   ```
+2. Reboot
