@@ -13,24 +13,24 @@
 
 - name: create br0 interface
   copy:
-    src: br0.netdev
+    src: systemd-networkd/br0.netdev
     dest: /etc/systemd/network/br0.netdev
   notify: restart systemd-networkd
 
 - name: create br0 network
   copy:
-    src: br0.network
+    src: systemd-networkd/br0.network
     dest: /etc/systemd/network/br0.network
   notify: restart systemd-networkd
 
 - name: create eth0 network
   copy:
-    src: eth0.network
+    src: systemd-networkd/eth0.network
     dest: /etc/systemd/network/eth0.network
   notify: restart systemd-networkd
 
 - name: create eth network
   copy:
-    src: eth.network
+    src: systemd-networkd/eth.network
     dest: /etc/systemd/network/eth.network
   notify: restart systemd-networkd
