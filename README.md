@@ -9,6 +9,7 @@ A set of Ansible Scripts to turn a barebones Arch Linux installation into a home
 - Bridges all `eth*` interfaces (except `eth0`)
 - Configures nftables
 - Configures dnsmasq for DHCP and DNS (using `1.1.1.1`)
+- Configures sshd (not remotely accessible)
 - Configures Unifi Controller (optional role)
 
 ## Customizations

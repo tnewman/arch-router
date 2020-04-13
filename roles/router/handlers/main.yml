@@ -1,3 +1,4 @@
 - include: handlers/systemd-networkd.yml
 - include: handlers/nftables.yml
 - include: handlers/dnsmasq.yml
+- include: handlers/ssh.yml
