@@ -1,6 +1,9 @@
 # arch-router
 A set of Ansible Scripts to turn a barebones Arch Linux installation into a home router.
 
+## Prerequisites
+- A complete Arch Linux installation
+
 ## What does it do?
 - Sets the `eth0` interface to receive an IP address via DHCP
 - Bridges all `eth*` interfaces (except `eth0`)
