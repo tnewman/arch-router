@@ -1,0 +1,6 @@
+- name: change /etc/shadow permissions to 600
+  file:
+    path: /etc/shadow
+    owner: root
+    group: root
+    mode: '0600'

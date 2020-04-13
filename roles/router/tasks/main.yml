@@ -1,3 +1,4 @@
+- include: tasks/hardening.yml
 - include: tasks/systemd-networkd.yml
 - include: tasks/nftables.yml
 - include: tasks/dnsmasq.yml
