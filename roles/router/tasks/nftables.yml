@@ -1,0 +1,23 @@
+- name: install nftables
+  pacman:
+    name: nftables
+    state: present
+  notify: restart nftables
+
+- name: enable nftables service
+  service:
+    name: nftables
+    enabled: yes
+  notify: restart nftables
+
+- name: install nftables configuration file
+  copy:
+    src: nftables.conf
+    dest: /etc/nftables.conf
+  notify: restart nftables
+
+- name: create nftables directory
+  file:
+    path: /etc/nftables.d
+    state: directory
+  notify: restart nftables

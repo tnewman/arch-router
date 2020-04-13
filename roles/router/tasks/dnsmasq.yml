@@ -1,0 +1,36 @@
+- name: install dnsmasq
+  pacman:
+    name: dnsmasq
+    state: present
+  notify: restart dnsmasq
+
+- name: enable dnsmasq
+  service:
+    name: dnsmasq
+    enabled: yes
+  notify: restart dnsmasq
+
+- name: install dnsmasq configuration file
+  copy:
+    src: dnsmasq.conf
+    dest: /etc/dnsmasq.conf
+  notify: restart dnsmasq
+
+- name: create dnsmasq directory
+  file:
+    path: /etc/dnsmasq.d
+    state: directory
+  notify: restart dnsmasq
+
+- name: install resolv configuration file
+  copy:
+    src: resolv.conf
+    dest: /etc/resolv.conf
+  notify: restart dnsmasq
+
+- name: disable systemd-resolved
+  service:
+    name: systemd-resolved
+    enabled: no
+    state: stopped
+  notify: restart dnsmasq
