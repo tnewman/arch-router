@@ -9,8 +9,9 @@ Type=forking
 TimeoutSec=5min
 KillMode=process
 NotifyAccess=all
-ExecStart=java -jar /opt/UniFi/lib/ace.jar start
-ExecStop=java -jar /opt/UniFi/lib/ace.jar stop
+WorkingDirectory=/opt/UniFi
+ExecStart=java -jar lib/ace.jar start
+ExecStop=java -jar lib/ace.jar stop
 User=unifi
 Group=unifi
 
