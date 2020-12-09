@@ -23,7 +23,7 @@
 
 - name: download and extract unifi controller
   unarchive:
-    src:
+    src: https://dl.ui.com/unifi/6.0.41/UniFi.unix.zip
     dest: /opt/unifi
     remote_src: yes
   notify: restart unifi controller
