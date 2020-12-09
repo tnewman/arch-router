@@ -2,3 +2,4 @@
   service:
     name: unifi
     state: restarted
+    daemon_reload: yes
