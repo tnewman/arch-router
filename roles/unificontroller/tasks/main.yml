@@ -21,6 +21,11 @@
     path: /opt/mongodb
     state: directory
 
+- name: install unzip
+  pacman:
+    name: unzip
+    state: present
+
 - name: download and extract unifi controller
   unarchive:
     src: https://dl.ui.com/unifi/6.0.41/UniFi.unix.zip
