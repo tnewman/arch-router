@@ -36,11 +36,11 @@
 - name: install unifi controller service
   copy:
     src: unifi-controller.service
-    dest: /etc/systemd/system/unifi-controller.service
+    dest: /etc/systemd/system/unifi.service
   notify: restart unifi controller
 
 - name: enable unifi controller service
   service:
-    name: unifi-controller
+    name: unifi
     enabled: yes
   notify: restart unifi controller
