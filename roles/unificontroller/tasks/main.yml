@@ -29,6 +29,10 @@
     remote_src: yes
   notify: restart unifi controller
 
+- name: create unifi group
+  group:
+    name: unifi
+
 - name: create unifi user
   user:
     name: unifi
