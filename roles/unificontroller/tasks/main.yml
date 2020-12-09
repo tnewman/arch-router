@@ -10,6 +10,12 @@
     remote_src: yes
   notify: restart unifi controller
 
+- name: install openjdk
+  pacman:
+    name: jre-openjdk-headless
+    state: present
+  notify: restart unifi controller
+
 - name: download and extract unifi controller
   unarchive:
     src:
