@@ -29,6 +29,12 @@
     remote_src: yes
   notify: restart unifi controller
 
+- name: create unifi user
+  user:
+    name: unifi
+    group: unifi
+    system: true
+
 - name: change unifi data directory ownership
   file:
     path: "/opt/UniFi/{{ item }}"
