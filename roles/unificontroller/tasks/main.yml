@@ -13,7 +13,7 @@
 
 - name: install openjdk
   pacman:
-    name: jre-openjdk-headless
+    name: jre8-openjdk-headless
     state: present
   notify: restart unifi controller
 
