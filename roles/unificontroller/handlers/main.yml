@@ -1,4 +1,4 @@
 - name: restart unifi controller
   service:
-    name: unifi-controller
+    name: unifi
     state: restarted
