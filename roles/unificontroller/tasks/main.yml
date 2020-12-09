@@ -63,8 +63,9 @@
     dest: /etc/systemd/system/unifi.service
   notify: restart unifi controller
 
-- name: enable unifi controller service
+- name: start and enable unifi controller service
   service:
     name: unifi
     enabled: yes
+    state: started
   notify: restart unifi controller
