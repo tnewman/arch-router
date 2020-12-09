@@ -49,6 +49,7 @@
   with_items:
     - data
     - logs
+    - run
 
 - name: create unifi mongod symlink
   file:
