@@ -16,6 +16,11 @@
     state: present
   notify: restart unifi controller
 
+- name: create unifi controller directory
+  file:
+    path: /opt/mongodb
+    state: directory
+
 - name: download and extract unifi controller
   unarchive:
     src:
