@@ -29,6 +29,17 @@
     remote_src: yes
   notify: restart unifi controller
 
+- name: change unifi data directory ownership
+  file:
+    path: "/opt/UniFi/{{ item }}"
+    state: directory
+    recurse: yes
+    owner: unifi
+    group: unifi
+    with_items:
+     - data
+     - logs
+
 - name: install unifi controller service
   copy:
     src: unifi.service

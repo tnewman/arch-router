@@ -11,6 +11,8 @@ KillMode=process
 NotifyAccess=all
 ExecStart=java -jar /opt/UniFi/lib/ace.jar start
 ExecStop=java -jar /opt/UniFi/lib/ace.jar stop
+User=unifi
+Group=unifi
 
 [Install]
 WantedBy=multi-user.target
