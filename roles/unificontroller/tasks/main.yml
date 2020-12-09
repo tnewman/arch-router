@@ -8,7 +8,7 @@
     src: https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-4.4.2.tgz
     dest: /opt/mongodb
     remote_src: yes
-  notify: restart mongodb
+  notify: restart unifi controller
 
 - name: download and extract unifi controller
   unarchive:
@@ -27,10 +27,4 @@
   service:
     name: unifi-controller
     enabled: yes
-  notify: restart unifi controller
-
-- name: install unifi controller docker compose file
-  copy:
-    src: unifi-docker-compose.yaml
-    dest: /opt/unifi-controller/docker-compose.yaml
   notify: restart unifi controller
