@@ -1,16 +1,17 @@
 [Unit]
-Description=Unifi Controller
-Requires=docker.service
-After=docker.service
-After=dnsmasq.service
+Description=unifi
+Requires=network.target
+After=network.target
 
 [Service]
 Restart=always
-
-WorkingDirectory=/opt/unifi-controller
-
-ExecStart=/usr/bin/docker-compose up
-ExecStop=/usr/bin/docker-compose down
+Type=forking
+TimeoutSec=5min
+KillMode=process
+NotifyAccess=all
+ExecStart=/usr/lib/unifi/bin/unifi.init start
+ExecStop=/usr/lib/unifi/bin/unifi.init stop
+ExecReload=/usr/lib/unifi/bin/unifi.init reload
 
 [Install]
 WantedBy=multi-user.target

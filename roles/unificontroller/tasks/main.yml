@@ -1,35 +1,16 @@
-- name: install docker
-  pacman:
-    name: "{{ packages }}"
-    state: present
-  notify: restart docker
-  vars:
-    packages:
-    - docker
-    - docker-compose
+- name: download and extract mongodb
+  unarchive:
+    src: https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-4.4.2.tgz
+    dest: /opt/mongodb
+    remote_src: yes
+  notify: restart mongodb
 
-- name: install docker prune service
-  copy:
-    src: docker-prune.service
-    dest: /etc/systemd/system/docker-prune.service
-  notify: restart docker prune timer
-
-- name: install docker prune timer
-  copy:
-    src: docker-prune.timer
-    dest: /etc/systemd/system/docker-prune.timer
-  notify: restart docker prune timer
-
-- name: enable docker prune timer
-  service:
-    name: docker-prune.timer
-    enabled: yes
-  notify: restart docker prune timer
-
-- name: create unifi controller directory
-  file:
-    path: /opt/unifi-controller
-    state: directory
+- name: download and extract unifi controller
+  unarchive:
+    src:
+    dest: /opt/unifi
+    remote_src: yes
+  notify: restart unifi controller
 
 - name: install unifi controller service
   copy:
