@@ -3,4 +3,3 @@ Name=eth0
 
 [Network]
 DHCP=yes
-LinkLocalAddressing=no
