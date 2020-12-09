@@ -50,6 +50,12 @@
     - data
     - logs
 
+- name: create unifi mongod symlink
+  file:
+    src: /opt/mongodb/bin/mongod
+    dest: /opt/UniFi/bin/mongod
+    state: link
+
 - name: install unifi controller service
   copy:
     src: unifi.service
