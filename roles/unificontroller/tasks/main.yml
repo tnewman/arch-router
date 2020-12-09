@@ -8,6 +8,7 @@
     src: https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-4.4.2.tgz
     dest: /opt/mongodb
     remote_src: yes
+    extra_opts: [--strip-components=1]
   notify: restart unifi controller
 
 - name: install openjdk
