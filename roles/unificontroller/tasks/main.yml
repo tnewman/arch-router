@@ -17,11 +17,6 @@
     state: present
   notify: restart unifi controller
 
-- name: create unifi controller directory
-  file:
-    path: /opt/mongodb
-    state: directory
-
 - name: install unzip
   pacman:
     name: unzip
@@ -30,7 +25,7 @@
 - name: download and extract unifi controller
   unarchive:
     src: https://dl.ui.com/unifi/6.0.41/UniFi.unix.zip
-    dest: /opt/unifi
+    dest: /opt
     remote_src: yes
   notify: restart unifi controller
 

@@ -9,9 +9,9 @@ Type=forking
 TimeoutSec=5min
 KillMode=process
 NotifyAccess=all
-ExecStart=/opt/unifi/bin/unifi.init start
-ExecStop=/opt/unifi/bin/unifi.init stop
-ExecReload=/opt/unifi/bin/unifi.init reload
+ExecStart=/opt/UniFi/bin/unifi.init start
+ExecStop=/opt/UniFi/bin/unifi.init stop
+ExecReload=/opt/UniFi/bin/unifi.init reload
 
 [Install]
 WantedBy=multi-user.target
