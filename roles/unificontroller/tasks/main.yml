@@ -36,7 +36,7 @@
 
 - name: install unifi controller service
   copy:
-    src: unifi-controller.service
+    src: unifi.service
     dest: /etc/systemd/system/unifi.service
   notify: restart unifi controller
 
