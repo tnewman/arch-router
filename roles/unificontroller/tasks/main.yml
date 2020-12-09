@@ -36,9 +36,9 @@
     recurse: yes
     owner: unifi
     group: unifi
-    with_items:
-     - data
-     - logs
+  with_items:
+    - data
+    - logs
 
 - name: install unifi controller service
   copy:
