@@ -4,12 +4,3 @@ Name=eth*
 
 [Network]
 Bridge=br0
-
-[BridgeVLAN]
-VLAN=100
-
-[BridgeVLAN]
-VLAN=200
-
-[BridgeVLAN]
-EgressUntagged=100
