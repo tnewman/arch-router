@@ -11,6 +11,7 @@ A set of Ansible Scripts to turn a barebones Arch Linux installation into a home
 - Configures dnsmasq for DHCPv4, DHCPv6 (with prefix delegation) and DNS (using Cloudflare DNS)
 - Configures sshd (not remotely accessible)
 - Configures Unifi Controller (optional role)
+- Configures home (VLAN 100) and guest (VLAN101) VLANs.
 
 ## Customizations
 - Choose the desired roles (router and Unifi Controller) by editing `hosts`
