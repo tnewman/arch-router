@@ -3,3 +3,6 @@ Name=eth0
 
 [Network]
 DHCP=yes
+
+[DHCPv6]
+PrefixDelegationHint=::/56
