@@ -1,4 +1,4 @@
-[Match]
+[NetDev]
 Name=vlan100
 Kind=vlan
 
