@@ -26,6 +26,14 @@
     - 200
   notify: restart systemd-networkd
 
+- name: create vlan networks
+  copy:
+    src: "systemd-networkd/vlan{{ item }}.network"
+    dest: "/etc/systemd/network/vlan{{ item }}.network"
+  with_items:
+    - 100
+    - 200
+  notify: restart systemd-networkd
 
 - name: create br0 network
   copy:
