@@ -17,6 +17,16 @@
     dest: /etc/systemd/network/br0.netdev
   notify: restart systemd-networkd
 
+- name: create vlan interfaces
+  copy:
+    src: "systemd-networkd/vlan{{ item }}.netdev"
+    dest: "/etc/systemd/network/vlan{{ item }}.netdev"
+  items:
+    - 100
+    - 200
+  notify: restart systemd-networkd
+
+
 - name: create br0 network
   copy:
     src: systemd-networkd/br0.network
