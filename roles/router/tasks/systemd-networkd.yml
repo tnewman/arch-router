@@ -21,7 +21,7 @@
   copy:
     src: "systemd-networkd/vlan{{ item }}.netdev"
     dest: "/etc/systemd/network/vlan{{ item }}.netdev"
-  items:
+  with_items:
     - 100
     - 200
   notify: restart systemd-networkd
