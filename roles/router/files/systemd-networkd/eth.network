@@ -6,4 +6,7 @@ Name=eth*
 Bridge=br0
 
 [BridgeVLAN]
+PVID=100
+EgressUntagged=100
 VLAN=100
+VLAN=200
