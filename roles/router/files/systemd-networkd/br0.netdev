@@ -2,5 +2,6 @@
 Name=br0
 Kind=bridge
 
-[Link]
-RequiredForOnline=yes
+[Bridge]
+DefaultPVID=1
+VLANFiltering=yes

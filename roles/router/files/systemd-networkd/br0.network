@@ -8,3 +8,11 @@ IPv6SendRA=yes
 DHCPv6PrefixDelegation=yes
 DNS=::1
 ConfigureWithoutCarrier=yes
+VLAN=vlan100
+VLAN=vlan200
+
+[BridgeVLAN]
+VLAN=100
+
+[BridgeVLAN]
+VLAN=200
