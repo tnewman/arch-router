@@ -6,6 +6,5 @@ VLAN=vlan100
 VLAN=vlan200
 
 [BridgeVLAN]
-PVID=100
 VLAN=100
 VLAN=200
