@@ -1,0 +1,9 @@
+[Match]
+Name=eth1
+
+[Network]
+Bridge=br0
+
+[BridgeVLAN]
+VLAN=100
+VLAN=200

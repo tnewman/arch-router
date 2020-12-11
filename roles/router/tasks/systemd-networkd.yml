@@ -47,6 +47,12 @@
     dest: /etc/systemd/network/eth0.network
   notify: restart systemd-networkd
 
+- name: create eth1 network
+  copy:
+    src: systemd-networkd/eth1.network
+    dest: /etc/systemd/network/eth1.network
+  notify: restart systemd-networkd
+
 - name: create eth network
   copy:
     src: systemd-networkd/eth.network
