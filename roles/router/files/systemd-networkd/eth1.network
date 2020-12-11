@@ -7,4 +7,3 @@ Bridge=br0
 [BridgeVLAN]
 VLAN=100
 VLAN=200
-PVID=100
