@@ -5,7 +5,7 @@ A set of Ansible Scripts to turn a barebones Arch Linux installation into a home
 - A complete Arch Linux installation
 
 ## What does it do?
-- Configures home (VLAN 100) and untrusted (VLAN200) VLANs.
+- Configures management (VLAN 1), home (VLAN 100), and untrusted (VLAN200) VLANs.
 - Sets the `eth0` interface to receive an IP address via DHCP.
 - Sets the `eth1` interface as a trunk port.
 - Sets all remaining interfaces as access ports on VLAN 100.
