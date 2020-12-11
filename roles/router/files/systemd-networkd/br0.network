@@ -2,9 +2,11 @@
 Name=br0
 
 [Network]
+VLAN=vlan1
 VLAN=vlan100
 VLAN=vlan200
 
 [BridgeVLAN]
+VLAN=1
 VLAN=100
 VLAN=200

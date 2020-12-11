@@ -31,6 +31,7 @@
     src: "systemd-networkd/vlan{{ item }}.network"
     dest: "/etc/systemd/network/vlan{{ item }}.network"
   with_items:
+    - 1
     - 100
     - 200
   notify: restart systemd-networkd
