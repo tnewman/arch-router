@@ -1,4 +1,4 @@
-- include: tasks/systemd-networkd.yml
 - include: tasks/nftables.yml
+- include: tasks/systemd-networkd.yml
 - include: tasks/dnsmasq.yml
 - include: tasks/ssh.yml
