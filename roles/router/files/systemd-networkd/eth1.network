@@ -7,4 +7,4 @@ Bridge=br0
 [BridgeVLAN]
 VLAN=100
 VLAN=200
-EgressUntagged=100
+PVID=100
