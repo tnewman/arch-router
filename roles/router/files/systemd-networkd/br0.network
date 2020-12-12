@@ -5,7 +5,6 @@ Name=br0
 VLAN=vlan1
 VLAN=vlan100
 VLAN=vlan200
-ConfigureWithoutCarrier=true
 
 [BridgeVLAN]
 VLAN=1
