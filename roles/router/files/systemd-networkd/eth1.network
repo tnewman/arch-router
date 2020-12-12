@@ -9,3 +9,6 @@ VLAN=100
 VLAN=200
 PVID=1
 EgressUntagged=1
+
+[Link]
+RequiredForOnline=no
