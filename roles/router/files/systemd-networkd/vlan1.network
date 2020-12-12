@@ -6,4 +6,5 @@ Address=10.0.0.1/24
 IPForward=yes
 IPv6SendRA=yes
 DHCPv6PrefixDelegation=yes
+PrefixDelegationHint=68
 DNS=::1
