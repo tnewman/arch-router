@@ -1,0 +1,11 @@
+# polkit is required for systemd-networkd to report its hostname to dnsmasq via dhcp
+- name: install polkit
+  pacman:
+    name: polkit
+    state: present
+
+- name: enable polkit service
+  service:
+    name: polkit
+    state: restarted
+    enabled: yes
