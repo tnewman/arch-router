@@ -1,5 +1,5 @@
 - name: restart unifi controller
   service:
     name: unifi
-    state: started
+    state: restarted
     daemon_reload: yes
