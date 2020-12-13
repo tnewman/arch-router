@@ -7,5 +7,5 @@
 - name: enable polkit service
   service:
     name: polkit
-    state: restarted
+    state: started
     enabled: yes
