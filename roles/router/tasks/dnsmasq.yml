@@ -2,13 +2,12 @@
   pacman:
     name: dnsmasq
     state: present
-  notify: restart dnsmasq
 
 - name: enable dnsmasq
   service:
     name: dnsmasq
+    state: started
     enabled: yes
-  notify: restart dnsmasq
 
 - name: install dnsmasq configuration file
   copy:
@@ -20,7 +19,6 @@
   file:
     path: /etc/dnsmasq.d
     state: directory
-  notify: restart dnsmasq
 
 - name: install resolv configuration file
   copy:

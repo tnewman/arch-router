@@ -8,8 +8,8 @@
 - name: enable systemd-networkd
   service:
     name: systemd-networkd
+    state: started
     enabled: yes
-  notify: restart systemd-networkd
 
 - name: create br0 interface
   copy:

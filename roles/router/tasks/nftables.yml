@@ -2,13 +2,12 @@
   pacman:
     name: nftables
     state: present
-  notify: restart nftables
 
 - name: enable nftables service
   service:
     name: nftables
+    state: started
     enabled: yes
-  notify: restart nftables
 
 - name: install nftables configuration file
   copy:
@@ -20,4 +19,3 @@
   file:
     path: /etc/nftables.d
     state: directory
-  notify: restart nftables
