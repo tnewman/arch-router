@@ -5,12 +5,8 @@ After=network.target
 
 [Service]
 Restart=always
-Type=forking
-TimeoutSec=5min
-KillMode=process
-NotifyAccess=all
 WorkingDirectory=/opt/UniFi
-ExecStart=java -jar lib/ace.jar start
+ExecStart=java -jar lib/ace.jar start -nodetatch
 ExecStop=java -jar lib/ace.jar stop
 User=unifi
 Group=unifi
