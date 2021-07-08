@@ -23,3 +23,8 @@
     name: vpp
     state: started
     enabled: yes
+
+- name: install vpp fact
+  copy:
+    src: vpp.fact
+    dest: /etc/ansible/facts.d/vpp.fact
