@@ -24,10 +24,16 @@
     state: started
     enabled: yes
 
+- name: create fact directory
+     file:
+       path: /etc/ansible/facts.d/
+       state: directory
+
 - name: install vpp fact
   copy:
     src: vpp.fact
     dest: /etc/ansible/facts.d/vpp.fact
+    mode: '0755'
 
 - name: reload facts
   setup: ~
