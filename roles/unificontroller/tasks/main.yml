@@ -12,12 +12,12 @@
   notify: restart unifi controller
 
 - name: install openjdk
-  pacman:
+  package:
     name: default-jre
     state: present
 
 - name: install unzip
-  pacman:
+  package:
     name: unzip
     state: present
 
