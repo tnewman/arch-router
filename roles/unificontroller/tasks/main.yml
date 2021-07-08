@@ -13,7 +13,7 @@
 
 - name: install openjdk
   package:
-    name: default-jre
+    name: openjdk-8-jre
     state: present
 
 - name: install unzip
