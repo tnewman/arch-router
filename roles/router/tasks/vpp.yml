@@ -1,11 +1,16 @@
-- name: install vpp repository
+- name: install vpp apt key
+  apt_key:
+    url: https://packagecloud.io/fdio/release/gpgkey
+    state: present
+
+- name: install vpp apt repository
   apt_repository:
     repo: deb https://packagecloud.io/fdio/release/ubuntu {{ ansible_lsb.codename | lower }} main
     state: present
 
 - name: install vpp
   package:
-    name: "{{ item }}"
+    name: {{ item }}
     state: present
   with_items:
     - vpp
