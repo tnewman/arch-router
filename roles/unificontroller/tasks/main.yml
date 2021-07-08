@@ -13,7 +13,7 @@
 
 - name: install openjdk
   pacman:
-    name: jre8-openjdk-headless
+    name: default-jre
     state: present
 
 - name: install unzip
