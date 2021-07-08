@@ -1,0 +1,13 @@
+- name: install vpp repository
+  apt_repository:
+    repo: deb https://packagecloud.io/fdio/release/ubuntu {{ ansible_lsb.codename | lower }} main
+    state: present
+
+- name: install vpp
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - vpp
+    - vpp-plugin-core
+    - vpp-plugin-dpdk
