@@ -1,6 +1,6 @@
 - name: install openssh
   package:
-    name: openssh
+    name: openssh-server
     state: present
 
 - name: enable openssh service
