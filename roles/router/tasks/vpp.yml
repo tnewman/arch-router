@@ -28,3 +28,6 @@
   copy:
     src: vpp.fact
     dest: /etc/ansible/facts.d/vpp.fact
+
+- name: reload facts
+  setup: ~
