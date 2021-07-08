@@ -16,3 +16,9 @@
     - vpp
     - vpp-plugin-core
     - vpp-plugin-dpdk
+
+- name: enable vpp service
+  service:
+    name: vpp
+    state: started
+    enabled: yes
