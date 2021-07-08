@@ -1,2 +1,2 @@
-- include: tasks/dnsmasq.yml
 - include: tasks/ssh.yml
+- include: tasks/dnsmasq.yml
