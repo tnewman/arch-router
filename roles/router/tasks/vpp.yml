@@ -25,9 +25,9 @@
     enabled: yes
 
 - name: create fact directory
-     file:
-       path: /etc/ansible/facts.d/
-       state: directory
+  file:
+    path: /etc/ansible/facts.d/
+    state: directory
 
 - name: install vpp fact
   copy:
