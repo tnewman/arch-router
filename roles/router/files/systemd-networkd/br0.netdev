@@ -1,7 +1,0 @@
-[NetDev]
-Name=br0
-Kind=bridge
-
-[Bridge]
-DefaultPVID=none
-VLANFiltering=yes

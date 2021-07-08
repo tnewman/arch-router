@@ -1,9 +1,0 @@
-[Match]
-Name=vlan100
-
-[Network]
-Address=10.0.1.1/24
-IPForward=yes
-IPv6SendRA=yes
-DHCPv6PrefixDelegation=yes
-DNS=::1

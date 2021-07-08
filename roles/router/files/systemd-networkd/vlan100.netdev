@@ -1,6 +1,0 @@
-[NetDev]
-Name=vlan100
-Kind=vlan
-
-[VLAN]
-Id=100
