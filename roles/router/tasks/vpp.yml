@@ -16,6 +16,7 @@
     - vpp
     - vpp-plugin-core
     - vpp-plugin-dpdk
+    - vpp-api-python
 
 - name: enable vpp service
   service:
