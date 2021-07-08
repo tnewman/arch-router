@@ -1,5 +1,5 @@
 - name: install dnsmasq
-  pacman:
+  package:
     name: dnsmasq
     state: present
 

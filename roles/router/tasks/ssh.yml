@@ -1,5 +1,5 @@
 - name: install openssh
-  pacman:
+  package:
     name: openssh
     state: present
 
