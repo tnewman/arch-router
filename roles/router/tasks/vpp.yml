@@ -10,7 +10,7 @@
 
 - name: install vpp
   package:
-    name: {{ item }}
+    name: "{{ item }}"
     state: present
   with_items:
     - vpp
