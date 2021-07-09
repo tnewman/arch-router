@@ -14,7 +14,6 @@ comment { Bridge LAN Ports }
 set interface l2 bridge lan_interface 1
 {% endfor %}
 
-
 comment { Create Interface for Router Host OS }
 create tap id 0 host-ip4-addr 10.0.0.2/24 host-ip4-gw 10.0.0.1
 set interface l2 bridge tap0 1
