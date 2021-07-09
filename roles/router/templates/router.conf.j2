@@ -25,13 +25,17 @@ set interface nat44 in bvi0 out {{ wan_interface }}
 
 nat44 add static mapping tcp local 10.0.0.2 22 external {{ wan_interface }} 22
 
+comment { Default Allow All Outbound ACL }
+set acl-plugin acl allow 0.0.0.0/0 0.0.0.0/0 tcp 0-65535 0-65535
+set acl-plugin interface GigabitEthernet1/0/0 output acl 1
+
+comment { Default Deny All Inbound ACL }
+set acl-plugin acl deny 0.0.0.0/0 0.0.0.0/0 tcp 0-65535 0-65535
+set acl-plugin interface GigabitEthernet1/0/0 input acl 2
+
 comment { Allow SSH ACL }
 set acl-plugin acl allow 0.0.0.0/0 0.0.0.0/0 tcp 22 22
-set acl-plugin interface GigabitEthernet1/0/0  input acl 1
-
-comment { Default Deny All ACL }
-set acl-plugin acl deny 0.0.0.0/0 0.0.0.0/0 tcp 0-65535 0-65535
-set acl-plugin interface GigabitEthernet1/0/0  input acl 2
+set acl-plugin interface GigabitEthernet1/0/0  input acl 3
 
 comment { Enable Interfaces }
 set interface state bvi0 up
