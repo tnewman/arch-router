@@ -22,8 +22,6 @@
   file:
     path: /var/log/vpp
     state: directory
-    owner: vpp
-    group: vpp
 
 - name: enable vpp service
   service:
