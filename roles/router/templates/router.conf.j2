@@ -1,17 +1,21 @@
 {% set wan = ansible_facts['ansible_local']['vpp']['wan_interface'] %}
 
+comment { Configure WAN Port with DHCP }
 set dhcp client intfc {{ wan }}
 set interface state {{ wan }} up
 
+comment { Create LAN Switch and Router }
 bvi create instance 0
 set interface l2 bridge bvi0 1 bvi
 set interface ip address bvi0 10.0.0.1/24
 set interface state bvi0 up
 
+comment { Create Interface for Router OS }
 create tap id 0 host-ip4-addr 10.0.0.2/24 host-ip4-gw 10.0.0.1
 set interface l2 bridge tap0 1
 set interface state tap0 up
 
+comment { Configure NAT }
 nat44 enable
 nat44 add interface address {{ wan }}
 set interface nat44 in bvi0 out {{ wan }}
