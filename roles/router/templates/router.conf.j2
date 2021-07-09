@@ -1,5 +1,5 @@
-set dhcp client intfc GigabitEthernet1/0/0
-set interface state GigabitEthernet1/0/0 up
+set dhcp client intfc {{ ansible_facts['ansible_local']['vpp']['wan_interface'] }}
+set interface state {{ ansible_facts['ansible_local']['vpp']['wan_interface'] }} up
 
 bvi create instance 0
 set interface l2 bridge bvi0 1 bvi
@@ -11,7 +11,7 @@ set interface l2 bridge tap0 1
 set interface state tap0 up
 
 nat44 enable
-nat44 add interface address GigabitEthernet1/0/0
-set interface nat44 in bvi0 out GigabitEthernet1/0/0
+nat44 add interface address {{ ansible_facts['ansible_local']['vpp']['wan_interface'] }}
+set interface nat44 in bvi0 out {{ ansible_facts['ansible_local']['vpp']['wan_interface'] }}
 
-nat44 add static mapping tcp local 10.0.0.2 22 external GigabitEthernet1/0/0 22
+nat44 add static mapping tcp local 10.0.0.2 22 external {{ ansible_facts['ansible_local']['vpp']['wan_interface'] }} 22
