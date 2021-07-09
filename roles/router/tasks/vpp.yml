@@ -18,6 +18,11 @@
     - vpp-plugin-dpdk
     - python3-vpp-api
 
+- name: create vpp log directory
+  file:
+    path: /var/log/vpp
+    state: directory
+
 - name: enable vpp service
   service:
     name: vpp
