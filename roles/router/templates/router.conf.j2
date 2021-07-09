@@ -11,7 +11,7 @@ set interface ip address bvi0 10.0.0.1/24
 
 comment { Bridge LAN Ports }
 {% for lan_interface in lan_interfaces %}
-set interface l2 bridge {% lan_interface %} 1
+set interface l2 bridge {{ lan_interface }} 1
 {% endfor %}
 
 comment { Create Interface for Router Host OS }
