@@ -11,10 +11,8 @@ interfaces = [interface.interface_name for interface in vpp.api.sw_interface_dum
 vpp.disconnect()
 
 vpp_facts = {
-    'ethernet_interfaces': []
+    'wan_interface': interfaces[0] if len(interfaces) > 0 else None,
+    'lan_interfaces': [interface for interface in interfaces[1:]],
 }
-
-for interface in interfaces:
-    vpp_facts['ethernet_interfaces'].append(interface)
 
 print(json.dumps(vpp_facts))
