@@ -37,3 +37,13 @@
 
 - name: reload facts
   setup: ~
+
+- name: configure vpp startup
+  copy:
+    src: startup.conf
+    dest: /etc/vpp/startup.conf
+
+- name: configure vpp router
+  template:
+    src: router.conf.j2
+    dest: /etc/vpp/router.conf
