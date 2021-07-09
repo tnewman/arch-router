@@ -1,7 +1,7 @@
-define WAN {{ ansible_facts['ansible_local']['vpp']['wan_interface'] }}
+{% set wan = ansible_facts['ansible_local']['vpp']['wan_interface'] %}
 
-set dhcp client intfc $(WAN)
-set interface state $(WAN) up
+set dhcp client intfc {{ wan }}
+set interface state {{ wan }} up
 
 bvi create instance 0
 set interface l2 bridge bvi0 1 bvi
@@ -13,7 +13,7 @@ set interface l2 bridge tap0 1
 set interface state tap0 up
 
 nat44 enable
-nat44 add interface address $(WAN)
-set interface nat44 in bvi0 out $(WAN)
+nat44 add interface address {{ wan }}
+set interface nat44 in bvi0 out {{ wan }}
 
-nat44 add static mapping tcp local 10.0.0.2 22 external $(WAN) 22
+nat44 add static mapping tcp local 10.0.0.2 22 external {{ wan }} 22
