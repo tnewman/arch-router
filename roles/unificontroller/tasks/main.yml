@@ -19,7 +19,7 @@
 # Required for Mongo
 - name: install openssl
   pacman:
-    name: openssl
+    name: openssl-1.1
     state: present
 
 - name: install unzip
