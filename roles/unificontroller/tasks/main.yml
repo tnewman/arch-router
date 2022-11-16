@@ -16,6 +16,12 @@
     name: jre8-openjdk-headless
     state: present
 
+# Required for Mongo
+- name: install openssl
+  pacman:
+    name: openssl
+    state: present
+
 - name: install unzip
   pacman:
     name: unzip
