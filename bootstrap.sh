@@ -2,4 +2,4 @@
 
 set -e
 
-sudo ansible-playbook -i hosts site.yml
+sudo ansible-playbook -i hosts.yml site.yml
