@@ -7,7 +7,7 @@
 - name: mount drive
   ansible.posix.mount:
     src: '{{ item.src }}'
-    format: '{{ item.format }}'
+    fstype: '{{ item.fstype }}'
     path: '{{ item.path }}'
     state: present
   with_items:
