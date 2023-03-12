@@ -22,7 +22,7 @@ A set of Ansible Scripts to turn a barebones Arch Linux installation into a home
 - Customize dnsmasq by adding configuration files to `/etc/dnsmasq.d`
 - Customize file shares by adding file share to the shares array in `hosts.yml`:
   ```yaml
-  hosts:
+  vars:
     # Mounts a drive
     mounts:
       # 1 entry per drive

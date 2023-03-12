@@ -10,7 +10,8 @@ unificontroller:
 
 fileshare:
   hosts:
-    localhost:
+    localhost
+  vars:
       ansible_connection: local
       mounts: []
       shares: []
