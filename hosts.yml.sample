@@ -12,3 +12,7 @@ fileshare:
   hosts:
     localhost:
       ansible_connection: local
+      shares:
+        #- name: test
+        #  group: test
+        #  mount: /dev/sdb1
