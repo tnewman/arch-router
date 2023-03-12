@@ -6,8 +6,8 @@
 
 - name: create mount
   file:
-    path: /etc/some_directory
-    state: '{{ item.path }}'
+    path: '{{ item.path }}'
+    state: directory
     mode: '0660'
     attributes: '+i'
   with_items:
