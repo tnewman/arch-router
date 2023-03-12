@@ -1,6 +1,6 @@
-- include: tasks/polkit.yml
-- include: tasks/systemd-networkd.yml
-- include: tasks/nftables.yml
-- include: tasks/systemd-networkd.yml
-- include: tasks/dnsmasq.yml
-- include: tasks/ssh.yml
+- import_tasks: tasks/polkit.yml
+- import_tasks: tasks/systemd-networkd.yml
+- import_tasks: tasks/nftables.yml
+- import_tasks: tasks/systemd-networkd.yml
+- import_tasks: tasks/dnsmasq.yml
+- import_tasks: tasks/ssh.yml

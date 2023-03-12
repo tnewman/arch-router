@@ -1,2 +1,2 @@
-- include: tasks/samba.yml
-- include: tasks/mount.yml
+- import_tasks: tasks/samba.yml
+- import_tasks: tasks/mount.yml
