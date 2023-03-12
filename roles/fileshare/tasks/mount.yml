@@ -1,7 +1,7 @@
 - name: mount {{ item.src }} to {{ item.path }}
   ansible.posix.mount:
-    path: {{ item.path }}
     src: {{ item.src }}
+    path: {{ item.path }}
     state: present
   with_items:
     hostvars['mounts']
