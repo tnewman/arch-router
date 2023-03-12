@@ -1,0 +1,6 @@
+- name: install samba and avahi
+  pacman:
+    name:
+      - samba
+      - avahi
+    state: present
