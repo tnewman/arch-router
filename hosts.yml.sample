@@ -12,4 +12,5 @@ fileshare:
   hosts:
     localhost:
       ansible_connection: local
+      mounts: []
       shares: []
