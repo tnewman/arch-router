@@ -4,6 +4,15 @@
       - ntfs-3g 
     state: present
 
+- name: create mount
+  file:
+    path: /etc/some_directory
+    state: '{{ item.path }}'
+    mode: '0660'
+    attributes: '+i'
+  with_items:
+    - "{{ hostvars[inventory_hostname]['mounts'] }}"
+
 - name: mount drive
   ansible.posix.mount:
     src: '{{ item.src }}'
