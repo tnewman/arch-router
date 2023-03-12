@@ -1,6 +1,13 @@
-- name: mount {{ item.src }} to {{ item.path }}
+- name: install ntfs
+  pacman:
+    name:
+      - ntfs-3g 
+    state: present
+
+- name: mount drive
   ansible.posix.mount:
     src: '{{ item.src }}'
+    format: '{{ item.format }}'
     path: '{{ item.path }}'
     state: present
   with_items:
