@@ -1,2 +1,6 @@
-- include: tasks/samba.yml
-- include: tasks/mount.yml
+- name: install samba and avahi
+  pacman:
+    name:
+      - samba
+      - avahi
+    state: present

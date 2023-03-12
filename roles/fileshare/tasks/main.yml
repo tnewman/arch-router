@@ -1,6 +1,2 @@
-- name: install samba and avahi
-  pacman:
-    name:
-      - samba
-      - avahi
-    state: present
+- include: tasks/samba.yml
+- include: tasks/mount.yml
