@@ -13,7 +13,7 @@
     - "{{ hostvars[inventory_hostname]['mounts'] }}"
 
 - name: make fileshare directory immutable when unmounted
-  command: 'mountpoint -q {{ item.path }} || chattr +i {{ item.path }}'
+  shell: 'mountpoint -q {{ item.path }} || chattr +i {{ item.path }}'
   with_items:
     - "{{ hostvars[inventory_hostname]['mounts'] }}"
 
