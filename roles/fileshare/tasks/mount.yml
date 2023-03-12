@@ -9,6 +9,6 @@
     src: '{{ item.src }}'
     fstype: '{{ item.fstype }}'
     path: '{{ item.path }}'
-    state: present
+    state: mounted
   with_items:
     - "{{ hostvars[inventory_hostname]['mounts'] }}"
