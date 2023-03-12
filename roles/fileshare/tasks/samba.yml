@@ -4,3 +4,15 @@
       - samba
       - avahi
     state: present
+
+- name: enable samba
+  service:
+    name: samba
+    state: started
+    enabled: yes
+
+- name: enable avahi
+  service:
+    name: avahi
+    state: started
+    enabled: yes
