@@ -1,11 +1,6 @@
-- name: Display all variables/facts known for a host
-  ansible.builtin.debug:
-    var: hostvars
-    verbosity: 4
-
-#- name: mount {{ item.src }} to {{ item.path }}
-#  ansible.posix.mount:
-#    src: '{{ item.src }}'
-#    path: '{{ item.path }}'
-#    state: present
-#  with_items: hostvars['fileshare']['mounts']
+- name: mount {{ item.src }} to {{ item.path }}
+  ansible.posix.mount:
+    src: '{{ item.src }}'
+    path: '{{ item.path }}'
+    state: present
+  with_items: hostvars[inventory_hostname]['mounts']
