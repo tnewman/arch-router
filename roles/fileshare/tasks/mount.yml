@@ -1,6 +1,6 @@
 - name: Display all variables/facts known for a host
   ansible.builtin.debug:
-    var: hostvars[inventory_hostname]
+    var: hostvars
     verbosity: 4
 
 #- name: mount {{ item.src }} to {{ item.path }}
