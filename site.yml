@@ -12,6 +12,6 @@
 
 - name: configure fileshare
   hosts: fileshare
-  becomes: yes
+  become: yes
   roles:
     - fileshare
