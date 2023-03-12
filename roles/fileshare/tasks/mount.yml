@@ -9,7 +9,6 @@
     path: '{{ item.path }}'
     state: directory
     mode: '0660'
-    attributes: i
   with_items:
     - "{{ hostvars[inventory_hostname]['mounts'] }}"
 
