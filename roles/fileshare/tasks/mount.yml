@@ -3,4 +3,4 @@
     src: '{{ item.src }}'
     path: '{{ item.path }}'
     state: present
-  with_items: "{{ hostvars['mounts'] }}"
+  with_items: hostvars['mounts']
