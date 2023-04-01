@@ -5,5 +5,5 @@
 
 - name: restart samba
   service:
-    name: samba
+    name: smbd
     state: restarted

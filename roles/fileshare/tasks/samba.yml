@@ -13,7 +13,7 @@
 
 - name: enable samba
   service:
-    name: samba
+    name: smbd
     state: started
     enabled: yes
 
