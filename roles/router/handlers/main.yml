@@ -1,4 +1,4 @@
-- include_tasks: handlers/systemd-networkd.yml
-- include_tasks: handlers/nftables.yml
-- include_tasks: handlers/dnsmasq.yml
-- include_tasks: handlers/ssh.yml
+- import_tasks: handlers/systemd-networkd.yml
+- import_tasks: handlers/nftables.yml
+- import_tasks: handlers/dnsmasq.yml
+- import_tasks: handlers/ssh.yml

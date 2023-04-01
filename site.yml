@@ -9,3 +9,9 @@
   become: yes
   roles:
     - unificontroller
+
+- name: configure fileshare
+  hosts: fileshare
+  become: yes
+  roles:
+    - fileshare

@@ -1,0 +1,24 @@
+- name: install samba and avahi
+  pacman:
+    name:
+      - samba
+      - avahi
+    state: present
+
+- name: install samba configuration file
+  template:
+    src: smb.conf
+    dest: /etc/samba/smb.conf
+  notify: restart samba smb
+
+- name: enable samba smb
+  service:
+    name: smb
+    state: started
+    enabled: yes
+
+- name: enable avahi
+  service:
+    name: avahi-daemon
+    state: started
+    enabled: yes

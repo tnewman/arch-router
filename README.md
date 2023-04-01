@@ -14,15 +14,40 @@ A set of Ansible Scripts to turn a barebones Arch Linux installation into a home
 - Configures dnsmasq for DHCPv4, DHCPv6 (with prefix delegation) and DNS (using Cloudflare DNS)
 - Configures sshd (not remotely accessible)
 - Configures Unifi Controller (optional role)
+- Configures a file share (optional role)
 
 ## Customizations
-- Choose the desired roles (router and Unifi Controller) by editing `hosts`
+- Choose the desired roles (router, file shares, Unifi Controller, etc.) by editing `hosts.yml`
 - Customize nftables by adding configuration files to `/etc/nftables.d`
 - Customize dnsmasq by adding configuration files to `/etc/dnsmasq.d`
+- Customize file shares by adding file share to the shares array in `hosts.yml`:
+  ```yaml
+  vars:
+    # Mounts a drive
+    mounts:
+      # 1 entry per drive
+      - src: /dev/sdb1 # Mounts the drive /dev/sdb1. LABEL and UUID can also be used here.
+        fstype: ntfs # This is an NTFS drive
+        path: /share/test # Mounts the drive to /share/test.
+        group: test # Makes the drive accessible by anyone in the test group.
+    # Shares a directory
+    shares:
+      # 1 entry per file share
+      - name: test # The name used for the share
+        users:
+          - test # The drive is accessible over the network by the test user
+        groups:
+          - test # The drive is accessible over the network by anyone in the test group
+        path: /share/test
+  ```
+  All configured shares will be mounted under `/share` and readable/writable by anyone in 
+  the defined group. Users are normal Linux users and can log in with a 
+  [SAMBA password](https://www.samba.org/samba/docs/current/man-html/smbpasswd.8.html).
 
 ## Running on localhost
+1. Copy `hosts.yml.sample` to `hosts.yml` and edit to suite your needs
 1. Run the Ansible Playbook
    ```bash
-   ansible-playbook -i hosts site.yml
+   ./bootstrap.sh
    ```
 2. Reboot

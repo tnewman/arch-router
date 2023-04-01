@@ -1,9 +1,0 @@
-[router]
-localhost ansible_connection=local
-
-[router:vars]
-ansible_python_interpreter=/usr/bin/python3
-
-[unificontroller]
-localhost ansible_connection=local
-
