@@ -9,11 +9,11 @@
   copy:
     src: smb.conf
     dest: /etc/samba/smb.conf
-  notify: restart samba
+  notify: restart samba smb
 
-- name: enable samba
+- name: enable samba smb
   service:
-    name: smbd
+    name: smb
     state: started
     enabled: yes
 

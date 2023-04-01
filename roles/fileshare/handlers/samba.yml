@@ -3,7 +3,7 @@
     name: avahi
     state: restarted
 
-- name: restart samba
+- name: restart samba smb
   service:
-    name: smbd
+    name: smb
     state: restarted
