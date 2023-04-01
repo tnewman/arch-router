@@ -22,6 +22,7 @@
     src: '{{ item.src }}'
     fstype: '{{ item.fstype }}'
     path: '{{ item.path }}'
+    opts: hide_hid_files
     state: mounted
   with_items:
     - "{{ hostvars[inventory_hostname]['mounts'] }}"
