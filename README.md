@@ -34,6 +34,8 @@ A set of Ansible Scripts to turn a barebones Arch Linux installation into a home
     shares:
       # 1 entry per file share
       - name: test # The name used for the share
+        users:
+          - test # The drive is accessible over the network by the test user
         groups:
           - test # The drive is accessible over the network by anyone in the test group
         path: /share/test
