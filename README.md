@@ -27,7 +27,7 @@ A set of Ansible Scripts to turn a barebones Arch Linux installation into a home
     mounts:
       # 1 entry per drive
       - src: /dev/sdb1 # Mounts the drive /dev/sdb1. LABEL and UUID can also be used here.
-        fstype: ntfs # This is an NTFS drive
+        fstype: ntfs3 # This is an NTFS drive
         path: /share/test # Mounts the drive to /share/test.
         group: test # Makes the drive accessible by anyone in the test group.
     # Shares a directory
