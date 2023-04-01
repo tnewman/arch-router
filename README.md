@@ -33,9 +33,9 @@ A set of Ansible Scripts to turn a barebones Arch Linux installation into a home
     # Shares a directory
     shares:
       # 1 entry per file share
-      - name: test # The drive will be mounted under /share/test
-          group: test # The drive is accessible over the network by anyone in the test group
-          mount: /dev/sdb1
+      - name: test # The name used for the share
+        group: test # The drive is accessible over the network by anyone in the test group
+        mount: /share/test
   ```
   All configured shares will be mounted under `/share` and readable/writable by anyone in 
   the defined group. Users are normal Linux users and can log in with a 

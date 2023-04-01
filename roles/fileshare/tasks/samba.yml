@@ -6,7 +6,7 @@
     state: present
 
 - name: install samba configuration file
-  copy:
+  template:
     src: smb.conf
     dest: /etc/samba/smb.conf
   notify: restart samba smb
