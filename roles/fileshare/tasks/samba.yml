@@ -19,6 +19,6 @@
 
 - name: enable avahi
   service:
-    name: avahi
+    name: avahi-daemon
     state: started
     enabled: yes
