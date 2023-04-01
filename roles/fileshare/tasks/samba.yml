@@ -8,7 +8,7 @@
 - name: install samba configuration file
   copy:
     src: smb.conf
-    dest: /etc/smb.conf
+    dest: /etc/samba/smb.conf
   notify: restart samba
 
 - name: enable samba
