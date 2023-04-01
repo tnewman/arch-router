@@ -1,0 +1,9 @@
+- name: restart avahi
+  service:
+    name: avahi
+    state: restarted
+
+- name: restart samba
+  service:
+    name: samba
+    state: restarted

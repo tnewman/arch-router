@@ -5,6 +5,12 @@
       - avahi
     state: present
 
+- name: install samba configuration file
+  copy:
+    src: smb.conf
+    dest: /etc/smb.conf
+  notify: restart samba
+
 - name: enable samba
   service:
     name: samba
