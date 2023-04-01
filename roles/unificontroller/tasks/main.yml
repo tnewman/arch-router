@@ -5,7 +5,8 @@
 
 - name: download and extract mongodb
   unarchive:
-    src: https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-4.4.2.tgz
+    # Versions 5+ do not support Intel Atom processors, which are common on router hardware, such as NetGate
+    src: https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-4.4.18.tgz
     dest: /opt/mongodb
     remote_src: yes
     extra_opts: [--strip-components=1]
@@ -16,6 +17,12 @@
     name: jre8-openjdk-headless
     state: present
 
+# Required for Mongo
+- name: install openssl
+  pacman:
+    name: openssl-1.1
+    state: present
+
 - name: install unzip
   pacman:
     name: unzip
@@ -23,7 +30,7 @@
 
 - name: download and extract unifi controller
   unarchive:
-    src: https://dl.ui.com/unifi/6.0.41/UniFi.unix.zip
+    src: https://dl.ui.com/unifi/7.2.95/UniFi.unix.zip
     dest: /opt
     remote_src: yes
   notify: restart unifi controller
