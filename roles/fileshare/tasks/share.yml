@@ -1,0 +1,11 @@
+- name: set share acls
+  posix.acl:
+    path: /etc/foo.d/
+    entity: "{{ item }}"
+    etype: group
+    permissions: rw
+    default: true
+    state: present
+    with_subelements:
+    - "{{ hostvars[inventory_hostname]['shares'] }}"
+    - groups
