@@ -1,4 +1,4 @@
-- name: install samba, avahi and wsdd
+- name: install samba and avahi
   pacman:
     name:
       - samba

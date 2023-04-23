@@ -2,6 +2,8 @@
   git:
     repo: https://aur.archlinux.org/wsdd.git
     dest: /opt/aur/wsdd
+  become: true
+  become_user: aur
 
 - name: build and install wsdd
   command:
