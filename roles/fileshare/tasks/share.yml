@@ -6,6 +6,5 @@
     permissions: rw
     default: true
     state: present
-    with_subelements:
-    - "{{ hostvars[inventory_hostname]['shares'] }}"
-    - groups
+    with_items:
+    - "{{ hostvars[inventory_hostname]['shares'] | map(attribute='groups') }}"
