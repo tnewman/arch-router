@@ -5,11 +5,6 @@
       - avahi
     state: present
 
-- name: clone wsdd from AUR
-  git:
-    repo: https://aur.archlinux.org/wsdd.git
-    dest: /opt/aur/wsdd
-
 - name: install samba configuration file
   template:
     src: smb.conf
