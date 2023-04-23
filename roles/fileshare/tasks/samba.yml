@@ -10,11 +10,6 @@
     repo: https://aur.archlinux.org/wsdd.git
     dest: /opt/aur/wsdd
 
-- name: build and install wsdd
-  command:
-    cmd: makepkg -i
-    chdir: /opt/aur/wsdd
-
 - name: install samba configuration file
   template:
     src: smb.conf

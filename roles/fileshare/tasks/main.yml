@@ -1,2 +1,3 @@
 - import_tasks: tasks/samba.yml
+- import_tasks: tasks/wsdd.yml
 - import_tasks: tasks/mount.yml

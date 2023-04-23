@@ -1,0 +1,6 @@
+- name: build and install wsdd
+  command:
+    cmd: makepkg -i
+    chdir: /opt/aur/wsdd
+  become: true
+  become_user: aur
