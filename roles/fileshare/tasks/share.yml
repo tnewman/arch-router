@@ -1,5 +1,5 @@
 - name: set share acls
-  posix.acl:
+  ansible.posix.acl:
     path: /etc/foo.d/
     entity: "{{ item }}"
     etype: group
