@@ -5,7 +5,7 @@
   become: true
   become_user: aur
 
-- name: build and install wsdd
+- name: build wsdd
   command:
     cmd: makepkg -f
     chdir: /opt/aur/wsdd
@@ -13,4 +13,4 @@
   become_user: aur
 
 - name: install wsdd
-  shell: pacman -U /opt/aur/wsdd/wsdd-*-any.pkg.tar.zst
+  shell: pacman -U --noconfirm /opt/aur/wsdd/wsdd-*-any.pkg.tar.zst
