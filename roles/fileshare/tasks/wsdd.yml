@@ -11,3 +11,9 @@
     chdir: /opt/aur/wsdd
   become: true
   become_user: aur
+
+- name: install wsdd
+  pacman:
+    name:
+      - /opt/aur/wsdd/wsdd-*-any.pkg.tar.zst
+    state: present
