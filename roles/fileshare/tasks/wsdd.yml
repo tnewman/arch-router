@@ -14,3 +14,15 @@
 
 - name: install wsdd
   shell: pacman -U --noconfirm /opt/aur/wsdd/wsdd-*-any.pkg.tar.zst
+
+- name: install wsdd configuration file
+  template:
+    src: conf.d/wsdd
+    dest: /etc/conf.d/wsdd
+  notify: restart wsdd
+
+- name: enable wsdd
+  service:
+    name: wsdd
+    state: started
+    enabled: yes
