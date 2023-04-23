@@ -22,7 +22,7 @@
     src: '{{ item.src }}'
     fstype: '{{ item.fstype }}'
     path: '{{ item.path }}'
-    opts: 'nofail'
+    opts: 'nofail,acl'
     state: mounted
   with_items:
     - "{{ hostvars[inventory_hostname]['mounts'] }}"
