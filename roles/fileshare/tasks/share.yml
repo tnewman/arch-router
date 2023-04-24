@@ -1,10 +1,9 @@
 - name: set share acls
   ansible.posix.acl:
-    path: /etc/foo.d/
-    entity: "{{ item }}"
+    path: "{{ item.0.path }}"
+    entity: "{{ item.1 }}"
     etype: group
     permissions: rw
     default: true
     state: present
-  with_items:
-    - "{{ hostvars[inventory_hostname]['shares'] | map(attribute='groups') }}"
+  loop: "{{ hostvars[inventory_hostname]['shares'] | subelements('groups') }}"
