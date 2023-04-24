@@ -3,18 +3,8 @@
     path: "{{ item.0.path }}"
     entity: "{{ item.1 }}"
     etype: group
-    permissions: rw
+    permissions: rwx
     default: true
-    state: present
-    recursive: true
-  loop: "{{ hostvars[inventory_hostname]['shares'] | subelements('groups') }}"
-
-- name: set share group acls
-  ansible.posix.acl:
-    path: "{{ item.0.path }}"
-    entity: "{{ item.1 }}"
-    etype: group
-    permissions: rw
     state: present
     recursive: true
   loop: "{{ hostvars[inventory_hostname]['shares'] | subelements('groups') }}"
