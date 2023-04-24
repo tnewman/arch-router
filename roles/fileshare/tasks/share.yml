@@ -23,7 +23,6 @@
     entity: "{{ item.1 }}"
     etype: group
     permissions: rwX
-    recursive: true
     state: present
   loop: "{{ hostvars[inventory_hostname]['shares'] | subelements('groups') }}"
 
