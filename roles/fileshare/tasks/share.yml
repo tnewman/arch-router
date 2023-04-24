@@ -1,3 +1,23 @@
+- name: set share user acls
+  ansible.posix.acl:
+    path: "{{ item.0.path }}"
+    entity: "{{ item.1 }}"
+    etype: user
+    permissions: rwX
+    recursive: true
+    state: present
+  loop: "{{ hostvars[inventory_hostname]['shares'] | subelements('users') }}"
+
+- name: set share default user acls
+  ansible.posix.acl:
+    path: "{{ item.0.path }}"
+    entity: "{{ item.1 }}"
+    etype: user
+    permissions: rwX
+    default: true
+    state: present
+  loop: "{{ hostvars[inventory_hostname]['shares'] | subelements('users') }}"
+
 - name: set share group acls
   ansible.posix.acl:
     path: "{{ item.0.path }}"
