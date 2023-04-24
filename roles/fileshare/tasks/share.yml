@@ -6,6 +6,7 @@
     permissions: rw
     default: true
     state: present
+    recursive: true
   loop: "{{ hostvars[inventory_hostname]['shares'] | subelements('groups') }}"
 
 - name: set share group acls
@@ -15,4 +16,5 @@
     etype: group
     permissions: rw
     state: present
+    recursive: true
   loop: "{{ hostvars[inventory_hostname]['shares'] | subelements('groups') }}"
