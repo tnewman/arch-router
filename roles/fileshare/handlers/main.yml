@@ -1,1 +1,2 @@
 - import_tasks: handlers/samba.yml
+- import_tasks: handlers/wsdd.yml

@@ -1,0 +1,12 @@
+- name: create aur build user
+  user:
+    name: aur
+    comment: Arch User Repository (AUR) Build User
+    system: true
+
+- name: create aur build directory
+  ansible.builtin.file:
+    path: /opt/aur
+    state: directory
+    mode: '0755'
+    owner: aur

@@ -1,0 +1,17 @@
+- name: set share user acls
+  ansible.posix.acl:
+    path: "{{ item.0.path }}"
+    entity: "{{ item.1 }}"
+    etype: user
+    permissions: rwX
+    state: present
+  loop: "{{ hostvars[inventory_hostname]['shares'] | subelements('users') }}"
+
+- name: set share group acls
+  ansible.posix.acl:
+    path: "{{ item.0.path }}"
+    entity: "{{ item.1 }}"
+    etype: group
+    permissions: rwX
+    state: present
+  loop: "{{ hostvars[inventory_hostname]['shares'] | subelements('groups') }}"
