@@ -30,18 +30,7 @@ A set of Ansible Scripts to turn a barebones Arch Linux installation into a home
         fstype: ntfs # This is an NTFS drive
         path: /share/test # Mounts the drive to /share/test.
     # Shares a directory
-    shares:
-      # 1 entry per file share
-      - name: test # The name used for the share
-        users:
-          - test # The drive is accessible over the network by the test user
-        groups:
-          - test # The drive is accessible over the network by anyone in the test group
-        path: /share/test
   ```
-  All configured shares will be mounted under `/share` and readable/writable by anyone in 
-  the defined group. Users are normal Linux users and can log in with a 
-  [SAMBA password](https://www.samba.org/samba/docs/current/man-html/smbpasswd.8.html).
 
 ## Running on localhost
 1. Copy `hosts.yml.sample` to `hosts.yml` and edit to suite your needs

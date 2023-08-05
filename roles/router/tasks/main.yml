@@ -4,3 +4,4 @@
 - import_tasks: tasks/systemd-networkd.yml
 - import_tasks: tasks/dnsmasq.yml
 - import_tasks: tasks/ssh.yml
+- import_tasks: tasks/avahi.yml

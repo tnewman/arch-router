@@ -2,8 +2,3 @@
   service:
     name: avahi-daemon
     state: restarted
-
-- name: restart samba smb
-  service:
-    name: smb
-    state: restarted

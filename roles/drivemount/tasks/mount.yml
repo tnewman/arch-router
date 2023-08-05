@@ -4,7 +4,7 @@
       - ntfs-3g 
     state: present
 
-- name: create fileshare directory
+- name: create drive mount directory
   file:
     path: '{{ item.path }}'
     state: directory
@@ -12,12 +12,12 @@
   with_items:
     - "{{ hostvars[inventory_hostname]['mounts'] }}"
 
-- name: make fileshare directory immutable when unmounted
+- name: make drive mount directory immutable when unmounted
   shell: 'mountpoint -q {{ item.path }} || chattr +i {{ item.path }}'
   with_items:
     - "{{ hostvars[inventory_hostname]['mounts'] }}"
 
-- name: mount fileshare drive
+- name: mount drive
   ansible.posix.mount:
     src: '{{ item.src }}'
     fstype: '{{ item.fstype }}'

@@ -8,9 +8,8 @@ unificontroller:
     localhost:
       ansible_connection: local
 
-fileshare:
+drivemount:
   hosts:
     localhost:
       ansible_connection: local
       mounts: []
-      shares: []

@@ -1,0 +1,11 @@
+- name: install avahi
+  pacman:
+    name:
+      - avahi
+    state: present
+
+- name: enable avahi
+  service:
+    name: avahi-daemon
+    state: started
+    enabled: yes
