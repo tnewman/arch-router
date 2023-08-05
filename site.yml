@@ -10,8 +10,8 @@
   roles:
     - unificontroller
 
-- name: configure fileshare
-  hosts: fileshare
+- name: configure drivemount
+  hosts: drivemount
   become: yes
   roles:
-    - fileshare
+    - drivemount
