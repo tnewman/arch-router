@@ -3,4 +3,3 @@
 - import_tasks: handlers/dnsmasq.yml
 - import_tasks: handlers/ssh.yml
 - import_tasks: handlers/avahi.yml
-- import_tasks: handlers/wsdd.yml

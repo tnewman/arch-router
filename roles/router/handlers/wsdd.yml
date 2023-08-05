@@ -1,4 +1,0 @@
-- name: restart wsdd
-  service:
-    name: wsdd
-    state: restarted

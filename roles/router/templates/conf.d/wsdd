@@ -1,4 +1,0 @@
-# command-line parameters for wsdd:
-#  modify this file to set workgroup or change other arguments as desired
-#  run 'wsdd --help' for a complete list of possible parameters
-PARAMS="--shortlog --workgroup WORKGROUP -i vlan100"
